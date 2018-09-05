@@ -7,9 +7,9 @@
 
 ## Background
 
-### Read Section 12.1 of _Fundamentals of Comptuer Graphics (4th Edition)_.
+### Read Section 12.1 of _Fundamentals of Computer Graphics (4th Edition)_.
 
-### Skim read Chapter 11 of _Fundamentals of Comptuer Graphics (4th Edition)_.
+### Skim read Chapter 11 of _Fundamentals of Computer Graphics (4th Edition)_.
 
 There are many ways to store a triangle (or polygonal) mesh on the computer. The
 data-structures have very different complexities in terms of code, memory, and
