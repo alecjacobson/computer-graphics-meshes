@@ -5,6 +5,9 @@
 // Construct a quad mesh of a sphere wth num_faces_u × num_faces_v faces
 // using a latitude-longitude Mercator parameterization.
 //
+// Inputs:
+//   num_faces_u  number of faces in the longitudinal direction
+//   num_faces_v  number of faces in the latitudinal direction
 // Outputs:
 //   V  #V by 3 list of 3D corner vertex positions
 //   F  #F by 4 list of quad face indices into rows of V
