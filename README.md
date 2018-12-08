@@ -1,6 +1,6 @@
 # Computer Graphics – Meshes
 
-> **To get started:** Fork this repository then issue
+> **To get started:** Clone this repository by issuing
 > 
 >     git clone --recursive http://github.com/[username]/computer-graphics-meshes.git
 >

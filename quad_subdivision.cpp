@@ -7,7 +7,7 @@ int main(int argc, char * argv[])
 {
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
-  igl::readOBJ(argc>1?argv[1]:"../shared/data/bob.obj",V,F);
+  igl::readOBJ(argc>1?argv[1]:"../data/bob.obj",V,F);
   if(F.cols() != 4 || F.minCoeff()<0)
   {
     std::cerr<<"Error: only pure quad meshes supported."<<std::endl;

@@ -24,7 +24,7 @@ int main(int argc, char * argv[])
     {
       QuadViewer v;
       v.set_mesh(V,F,UV,UF,NV,NF);
-      set_texture_from_png("../shared/data/rubiks-cube.png", v.viewer.data());
+      set_texture_from_png("../data/rubiks-cube.png", v.viewer.data());
       v.launch();
     }
   }
