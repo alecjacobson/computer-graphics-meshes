@@ -8,7 +8,7 @@ int main(int argc, char * argv[])
 {
   Eigen::MatrixXd V;
   Eigen::MatrixXi F;
-  igl::read_triangle_mesh(argc>1?argv[1]:"../data/fandisk.obj",V,F);
+  igl::read_triangle_mesh(argc>1?argv[1]:"../data/cup.obj",V,F);
   Eigen::MatrixXd VN,FN,CN;
   // Compute different types of normals
   per_face_normals(V,F,FN);
