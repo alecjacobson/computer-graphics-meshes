@@ -249,13 +249,7 @@ normals.
 
 ### `src/sphere.cpp`
 
-Construct a quad mesh of a sphere with num_faces_u × num_faces_v faces.
-
-### `src/catmull_clark.cpp`
-
-Conduct `num_iters` iterations of [Catmull-Clark
-subdivision](https://en.wikipedia.org/wiki/Catmull–Clark_subdivision_surface) on
-a **pure quad** mesh (`V`,`F`).
+Construct a quad mesh of a sphere with `num_faces_u` × `num_faces_v` faces.
 
 ### `src/triangle_area_normal.cpp`
 Compute the normal vector of a 3D triangle given its corner locations. The
@@ -276,4 +270,9 @@ Compute per corner normals for a triangle mesh by computing the area-weighted
 average of normals at incident faces whose normals deviate less than the
 provided threshold.
 
+### `src/catmull_clark.cpp`
+
+Conduct `num_iters` iterations of [Catmull-Clark
+subdivision](https://en.wikipedia.org/wiki/Catmull–Clark_subdivision_surface) on
+a **pure quad** mesh (`V`,`F`).
 
