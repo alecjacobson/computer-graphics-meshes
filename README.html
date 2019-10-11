@@ -202,9 +202,9 @@ triangles incident on the shared vertex at this corner, but we&#8217;ll ignore
 triangle&#8217;s whose normal is too different from the corner&#8217;s face&#8217;s normal:</p>
 
 <p>$$\n_{f,c} =
-\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&lt;ε } a_g \n_g}{\left|\left|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&lt;ε } a_g \n_g\right|\right|},
+\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&gt;ε } a_g \n_g}{\left|\left|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f&gt;ε } a_g \n_g\right|\right|},
 $$
-where <span class="math">\(ε\)</span> is the maximum dot product between two face normals before we declare
+where <span class="math">\(ε\)</span> is the minimum dot product between two face normals before we declare
 there is a crease between them.</p>
 
 <figure>

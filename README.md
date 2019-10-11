@@ -105,9 +105,9 @@ triangles incident on the shared vertex at this corner, but we'll ignore
 triangle's whose normal is too different from the corner's face's normal:
 
 $$\n_{f,c} = 
-\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f<ε } a_g \n_g}{\left\|\left\|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f<ε } a_g \n_g\right\|\right\|},
+\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f>ε } a_g \n_g}{\left\|\left\|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f>ε } a_g \n_g\right\|\right\|},
 $$
-where $ε$ is the maximum dot product between two face normals before we declare
+where $ε$ is the minimum dot product between two face normals before we declare
 there is a crease between them.
 
 ![`./normals` should open a viewing window. Toggling `1`,`2`,`3` should switch
