@@ -9,7 +9,7 @@
 //   F  6 by 4 list of quad face indices into rows of V
 //   UV  14 by 2 list of corner parameterization positions
 //   UF  6 by 4 list of quad face indices into rows of UV
-//   NV  6 by 4 list of 3D unit normal vectors
+//   NV  6 by 3 list of 3D unit normal vectors
 //   NF  6 by 4 list of quad face indices into rows of NV
 void cube(
   Eigen::MatrixXd & V,
