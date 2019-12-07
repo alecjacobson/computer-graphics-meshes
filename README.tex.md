@@ -22,13 +22,13 @@ connected to each other). The connectivity is also sometimes referred to as the
 
 The [graphics pipeline](https://en.wikipedia.org/wiki/Graphics_pipeline) works
 on a per-triangle and per-vertex basis. So the simplest way to store geometry is
-a 3D position $\v_i ∈ \R³$ for each $i$-th vertex of the mesh. And to store
+a 3D position $\mathbf{v}_i \in  \mathbf{R}^3 $ for each $i$-th vertex of the mesh. And to store
 triangle connectivity as an ordered triplet of indices referencing vertices:
-${i,j,k}$ defines a triangle with corners at vertices $\v_i$, $\v_j$ and $\v_k$.
+${i,j,k}$ defines a triangle with corners at vertices $\mathbf{v}_i$, $\mathbf{v}_j$ and $\mathbf{v}_k$.
 Thus, the geometry is stored as a list of $n$ 3D vectors: efficiently, we can
-put these vectors in the rows of a real-valued matrix $\V ∈ \R^{n×3}$. Likewise,
+put these vectors in the rows of a real-valued matrix $\mathbf{V} \in  \mathbf{R}^{n\times 3}$. Likewise,
 the connectivity is stored as a list of $m$ triplets: efficiently, we can put
-these triplets in the rows of an integer-valued matrix $\F ∈ [0,n-1]^{m×3}$.
+these triplets in the rows of an integer-valued matrix $\mathbf{F} \in  [0,n-1]^{m\times 3}$.
 
 > **Question:** What if we want to store a (pure-)quad mesh?
 
@@ -79,7 +79,7 @@ This raises the question: what normals should we put at vertices or corners of
 our mesh? 
 
 For a faceted surface (e.g., a cube), all corners of a planar face $f$ should
-share the face's normal $\n_f ∈ \R³$ .
+share the face's normal $\mathbf{n}_f \in  \mathbf{R}^3 $ .
 
 For a smooth surface (e.g., a sphere), corners of triangles located at the same
 vertex should share the same normal vector. This way the rendering is continuous
@@ -90,7 +90,7 @@ angle-weighted (geometrically well motivated, but not robust near zero-area
 triangles), area-weighted (geometrically reasonable, well behaved). In this
 assignment, we'll compute area-weighted per-vertex normals:
 
-$$\n_v = \frac{∑\limits_{f∈N(v)} a_f \n_f}{\left\|∑\limits_{f∈N(v)} a_f \n_f\right\|},$$
+$$\mathbf{n}_v = \frac{\Sigma \limits_{f\in N(v)} a_f \mathbf{n}_f}{\left\|\Sigma \limits_{f\in N(v)} a_f \mathbf{n}_f\right\|},$$
 where $N(v)$ is the set of faces neighboring the $v$-th vertex.
 
 [per-vertex-normal]: images/per-vertex-normal.png height=300px
@@ -104,10 +104,10 @@ vertex). For each corner, we'll again compute an area-weighted average of normal
 triangles incident on the shared vertex at this corner, but we'll ignore
 triangle's whose normal is too different from the corner's face's normal:
 
-$$\n_{f,c} = 
-\frac{∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f>ε } a_g \n_g}{\left\|\left\|∑\limits_{g∈N(v)\,|\,\n_g⋅\n_f>ε } a_g \n_g\right\|\right\|},
+$$\mathbf{n}_{f,c} = 
+\frac{\Sigma \limits_{g\in N(v)\,|\,\mathbf{n}_g\cdot\mathbf{n}_f>\epsilon  } a_g \mathbf{n}_g}{\left\|\left\|\Sigma \limits_{g\in N(v)\,|\,\mathbf{n}_g\cdot\mathbf{n}_f>\epsilon  } a_g \mathbf{n}_g\right\|\right\|},
 $$
-where $ε$ is the minimum dot product between two face normals before we declare
+where $\epsilon $ is the minimum dot product between two face normals before we declare
 there is a crease between them.
 
 ![`./normals` should open a viewing window. Toggling `1`,`2`,`3` should switch
