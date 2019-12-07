@@ -91,6 +91,7 @@ triangles), area-weighted (geometrically reasonable, well behaved). In this
 assignment, we'll compute area-weighted per-vertex normals:
 
 <p align="center"><img src="/tex/599fe3b222b5898bd240d6ac12d5c5b5.svg?invert_in_darkmode&sanitize=true" align=middle width=161.40208425pt height=41.4976122pt/></p>
+
 where <img src="/tex/f947b3c602ca948910b99f1601e5abed.svg?invert_in_darkmode&sanitize=true" align=middle width=36.34324319999999pt height=24.65753399999998pt/> is the set of faces neighboring the <img src="/tex/6c4adbc36120d62b98deef2a20d5d303.svg?invert_in_darkmode&sanitize=true" align=middle width=8.55786029999999pt height=14.15524440000002pt/>-th vertex.
 
 [per-vertex-normal]: images/per-vertex-normal.png height=300px
@@ -105,6 +106,7 @@ triangles incident on the shared vertex at this corner, but we'll ignore
 triangle's whose normal is too different from the corner's face's normal:
 
 <p align="center"><img src="/tex/cc96dd182e07003c6232739259df10ec.svg?invert_in_darkmode&sanitize=true" align=middle width=245.6981736pt height=42.4291164pt/></p>
+
 where <img src="/tex/1926c401973f24b4db4f35dca2eb381d.svg?invert_in_darkmode&sanitize=true" align=middle width=6.672392099999992pt height=14.15524440000002pt/> is the minimum dot product between two face normals before we declare
 there is a crease between them.
 
